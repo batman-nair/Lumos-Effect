@@ -12,7 +12,7 @@ body {
   left:0;
   bottom:0;
   right:0;
-  background:rgba(0,0,0,0.9);
+  background: black;
   transition: 1s 0.4s;
 }
 #progress{
