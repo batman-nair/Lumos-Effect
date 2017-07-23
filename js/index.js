@@ -51,6 +51,39 @@ for(j = 0; j < lumos.length; j++) {
   lumos[j].style.left = screen.width/2 - parseInt(lumos[j].style.width)/2 + 'px';
 }
 
-
  window.addEventListener('mousemove', initLumos);
  var initLightTimer = setInterval(initLightning, 6000 + Math.random()*3000);
+
+// Loading Bar https://stackoverflow.com/a/11072778
+ ;(function(){
+   function id(v){return document.getElementById(v); }
+   function loadbar() {
+     var ovrl = id("overlay"),
+         prog = id("progress"),
+         stat = id("progstat"),
+         img = document.images,
+         c = 0;
+         tot = img.length;
+
+     function imgLoaded(){
+       c += 1;
+       var perc = ((100/tot*c) << 0) +"%";
+       prog.style.width = perc;
+       stat.innerHTML = "Loading "+ perc;
+       if(c===tot) return doneLoading();
+     }
+     function doneLoading(){
+       ovrl.style.opacity = 0;
+       setTimeout(function(){
+         ovrl.style.display = "none";
+       }, 1200);
+     }
+     for(var i=0; i<tot; i++) {
+       var tImg     = new Image();
+       tImg.onload  = imgLoaded;
+       tImg.onerror = imgLoaded;
+       tImg.src     = img[i].src;
+     }
+   }
+   document.addEventListener('DOMContentLoaded', loadbar, false);
+ }());
