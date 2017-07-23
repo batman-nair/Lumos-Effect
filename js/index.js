@@ -53,11 +53,13 @@ for(j = 0; j < lumos.length; j++) {
 
  window.addEventListener('mousemove', initLumos);
  var initLightTimer = setInterval(initLightning, 6000 + Math.random()*3000);
+ document.addEventListener('DOMContentLoaded', loadbar, false);
 
 // Loading Bar https://stackoverflow.com/a/11072778
- ;(function(){
+
    function id(v){return document.getElementById(v); }
    function loadbar() {
+     console.log("loaded");
      var ovrl = id("overlay"),
          prog = id("progress"),
          stat = id("progstat"),
@@ -85,5 +87,3 @@ for(j = 0; j < lumos.length; j++) {
        tImg.src     = img[i].src;
      }
    }
-   document.addEventListener('DOMContentLoaded', loadbar, false);
- }());
