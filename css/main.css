@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  cursor: none;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  margin: 0 auto;
+  filter: brightness(50%);
+
+}
+
+.lumos {
+  position: absolute;
+  transition-property: width, height;
+  transition-duration: 50ms;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+}
+.light-effect {
+  background: rgba(0,0,0,0.2); /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.4)); /* Safari */
+  background: -o-radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.4)); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.4)); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.4)); /* Standard syntax */
+}
+
+.remove-effect {
+  background: none;
+}
