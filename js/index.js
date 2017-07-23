@@ -52,6 +52,12 @@ for(j = 0; j < lumos.length; j++) {
 }
 
  window.addEventListener('mousemove', initLumos);
+ window.addEventListener('click', function() {
+ 	var bgm = document.querySelector("audio");
+ 	if(bgm.paused) {
+ 		bgm.play();
+ 	}
+ });
  var initLightTimer = setInterval(initLightning, 6000 + Math.random()*3000);
  document.addEventListener('DOMContentLoaded', loadbar, false);
 
